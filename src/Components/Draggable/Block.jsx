@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const Block = () => {
   const [isDragging, setIsDragging] = useState(false);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [position, setPosition] = useState({ x: 100, y: 100 });
   const [startPosition, setStartPosition] = useState({ x: 0, y: 0 });
 
   const handleMouseDown = (e) => {
@@ -32,15 +32,14 @@ const Block = () => {
         position: "absolute",
         left: position.x + "px",
         top: position.y + "px",
-        border: "1px solid #000",
-        padding: "10px",
         cursor: isDragging ? "grabbing" : "grab",
       }}
+      className=" px-5 py-3 border-2 rounded-md border-sky-600 shadow-md bg-cyan-600 text-white font-extrabold text-lg"
       onMouseDown={handleMouseDown}
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
     >
-      Drag me!
+      +
     </div>
   );
 };
